@@ -1,0 +1,541 @@
+/* Reset dan Font Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Untuk smooth scroll saat klik navigasi */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #111;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 700;
+  color: #107844;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+  /* Hilangkan margin bawah untuk paragraf terakhir di sebuah kontainer */
+}
+
+a {
+  text-decoration: none;
+  color: #259b54;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* Membuat gambar responsif */
+}
+
+.page-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  gap: 32px;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  /* Membuat navbar tetap di atas saat scroll */
+  top: 0;
+  z-index: 1000;
+  /* Agar navbar di atas elemen lain */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  width: 40px;
+  height: 40px;
+}
+
+.site-title {
+  font-size: 18px;
+  color: #111;
+  font-weight: 700;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.menu li a {
+  color: #111;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.menu li a:hover,
+.menu li a.active {
+  /* Kelas .active bisa ditambahkan via JS untuk menu aktif */
+  color: #107844;
+  border-bottom: 2px solid #107844;
+  /* Indikator hover/aktif */
+}
+
+/* Tombol Umum */
+.button {
+  background-color: #259b54;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  /* Sedikit disesuaikan */
+  border-radius: 8px;
+  /* Radius disesuaikan */
+  cursor: pointer;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  /* Hilangkan border default jika ada dari <a> */
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #1c7a42;
+  transform: translateY(-2px);
+  /* Efek naik sedikit */
+}
+
+.button .material-symbols-outlined {
+  font-size: 1.25em;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url(assets/hero.jpg) no-repeat center center/cover;
+  min-height: 90vh;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  gap: 24px;
+  color: #000000;
+}
+
+.hero-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.hero-caption p {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  /* Ukuran font responsif */
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  color: #000000;
+}
+
+.hero-caption span p {
+  color: #259b54;
+}
+
+.section-title {
+  font-size: clamp(24px, 4vw, 32px);
+  /* Ukuran font responsif */
+  font-weight: 700;
+  color: #107844;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Section Paket Wisata */
+.section-paket {
+  width: 100%;
+  padding: 40px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.paket-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Agar card turun ke bawah di layar kecil */
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  /* Batas lebar maksimum */
+}
+
+.card-paket {
+  width: 100%;
+  min-height: 420px;
+  flex: 1 1 300px;
+  /* Flex grow, shrink, basis (lebar minimum sebelum wrap) */
+  max-width: 350px;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #F5FFFA 40%, #E6F7FF 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.card-paket:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-paket-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #259b54;
+  margin-bottom: 16px;
+}
+
+.paket-benefit-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: auto;
+  padding-bottom: 16px;
+  text-align: left;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.benefit-item .material-symbols-outlined {
+  color: #259b54;
+  font-size: 22px;
+}
+
+.benefit-item p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-paket .button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.sedinasewengi {
+  background: linear-gradient(180deg, #fdb022 20%, #f04438 80%);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.sedinasewengi:hover {
+  transform: scale(1.05) translateY(-6px);
+}
+
+.sedinasewengi .card-paket-title,
+.sedinasewengi .benefit-item p,
+.sedinasewengi .benefit-item .material-symbols-outlined {
+  color: #ffffff;
+}
+
+.sedinasewengi .button {
+  background-color: #ffffff;
+  color: #f04438;
+}
+
+.sedinasewengi .button:hover {
+  background-color: #fce3e1;
+}
+
+.paket-note {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 16px;
+}
+
+/* Section Wisata */
+.section-wisata {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.section-wisata:nth-child(even) {
+  /* Memberi warna latar berbeda untuk section wisata genap */
+  background-color: #f9f9f9;
+}
+
+
+.wisata-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card-wisata {
+  width: 100%;
+  min-height: 380px;
+  flex: 1 1 300px;
+  max-width: 360px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-wisata:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hiking {
+  background-image: url(assets/hutan.jpg);
+}
+
+.camping {
+  background-image: url(assets/kemah.jpg);
+}
+
+.outbound {
+  background-image: url(assets/outbond.jpg);
+}
+
+.karawitan {
+  background-image: url(assets/gamelan.jpg);
+}
+
+.pedalangan {
+  background-image: url(assets/dalang.jpg);
+}
+
+.permainan {
+  background-image: url(assets/engrang.jpg);
+}
+
+.sapi {
+  background-image: url(assets/sapi.jpg);
+}
+
+.lele {
+  background-image: url(assets/lele.jpeg);
+}
+
+.gula {
+  background-image: url(assets/gula.jpg);
+}
+
+.telor {
+  background-image: url(assets/telor.jpg);
+}
+
+.madu {
+  background-image: url(assets/madu.jpg);
+}
+
+.tempe {
+  background-image: url(assets/tempe.jpg);
+}
+
+.card-wisata-caption {
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(2.6px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 16px 16px 16px;
+  box-sizing: border-box;
+}
+
+.card-wisata-caption h4 {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Section FAQ */
+.section-faq {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.section-faq .section-title {
+  margin-bottom: 16px;
+}
+
+.faq-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.faq-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+/* Footer */
+.section-footer {
+  background-color: #259b54;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 40px;
+  font-size: 14px;
+}
+
+.section-footer p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+
+/* Media Queries untuk Responsivitas */
+@media (min-width: 768px) {
+  .section-faq {
+    flex-direction: row;
+    /* Kembali ke layout row di layar lebih besar */
+    gap: 48px;
+    text-align: left;
+  }
+
+  .faq-caption {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .menu {
+    /* Di sini bisa ditambahkan style untuk menu mobile (hamburger) jika diperlukan */
+    gap: 16px;
+  }
+
+  .menu li a {
+    font-size: 15px;
+    /* Font menu lebih kecil di mobile */
+  }
+
+  .hero-caption p {
+    /* Font hero caption sudah responsif dengan clamp() */
+  }
+
+  .paket-cards-container,
+  .wisata-cards-container {
+    gap: 20px;
+    /* Kurangi gap antar card di mobile */
+  }
+
+  .section-paket,
+  .section-wisata,
+  .section-faq {
+    padding: 30px 20px;
+    /* Kurangi padding section di mobile */
+  }
+
+  .card-paket,
+  .card-wisata {
+    flex-basis: 100%;
+    /* Card mengambil lebar penuh */
+    max-width: 100%;
+  }
+
+}
