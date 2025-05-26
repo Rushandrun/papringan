@@ -58,7 +58,7 @@ img {
 /* Navbar */
 .navbar {
   width: 100%;
-  padding: 16px 20px;
+  padding: 16px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,21 +81,6 @@ img {
   height: 40px;
 }
 
-.hamburger-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  display: block;
-  /* Pastikan tombol terlihat */
-}
-
-.hamburger-btn img {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-
 .site-title {
   font-size: 18px;
   color: #111;
@@ -104,42 +89,17 @@ img {
 }
 
 .menu {
-    /* Sembunyikan menu secara default */
-      display: none;
-      flex-direction: column;
-      /* Menu akan tampil vertikal */
-      width: 100%;
-      /* Lebar menu penuh layar */
-      background-color: #444;
-      /* Warna latar belakang menu saat terbuka */
-      position: absolute;
-      /* Posisi menu relatif terhadap .navbar */
-      top: 100%;
-      /* Letakkan menu di bawah navbar */
-      left: 0;
-      padding: 10px 0;
-      /* Padding atas bawah untuk item menu */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      /* Pastikan menu di atas konten lain */
-}
-
-.menu ul {
+  display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  /* Teks menu di tengah */
+  gap: 24px;
 }
 
-.menu li {
-  margin: 10px 0;
-}
-.menu a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  display: block;
+.menu li a {
+  color: #111;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  transition: color 0.3s ease;
+  padding: 8px 0;
 }
 
 .menu li a:hover,
