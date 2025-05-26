@@ -29,8 +29,11 @@
       <nav class="navbar">
         <div class="logo-container">
           <img src="assets/logo.png" alt="logo kampung papringan" />
-          <h5 class="site-title">Kampung Wisata Papringan</h5>
+          <h5 class="site-title">Kampung Papringan</h5>
         </div>
+        <button class="hamburger-btn">
+          <img src="/assets/hamburger.png" alt="Menu" />
+        </button>
         <ul class="menu">
           <li><a href="#section-paket">Paket Wisata</a></li>
           <li><a href="#section-wisata-alam">Wisata</a></li>
@@ -239,9 +242,21 @@
           </div>
           <div class="menu-papringan">
             <ul class="content-menu">
-              <li><a href="#section-paket">Paket Wisata</a></li>
-              <li><a href="#section-wisata-alam">Wisata</a></li>
-              <li><a href="#section-faq">Contact Us</a></li>
+              <li>
+                <h4>
+                  <a href="#section-paket">Paket Wisata</a>
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <a href="#section-wisata-alam">Wisata</a>
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <a href="#section-faq">Contact Us</a>
+                </h4>
+              </li>
             </ul>
           </div>
           <div class="social-media">
@@ -271,5 +286,15 @@
         <p>&copy; 2024 Kampung Wisata Papringan. All Rights Reserved.</p>
       </footer>
     </div>
+
+    <script>
+      // JavaScript Sederhana
+      const hamburgerBtn = document.querySelector(".hamburger-btn")
+      const navMenu = document.querySelector(".nav-menu")
+
+      hamburgerBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active") // Tambah/hapus class 'active'
+      })
+    </script>
   </body>
 </html>

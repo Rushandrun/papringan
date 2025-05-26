@@ -1,4 +1,3 @@
-/* Reset dan Font Dasar */
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +23,7 @@ h5,
 h6 {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-weight: 700;
-  color: #34C759;
+  color: #107844;
 }
 
 p {
@@ -59,14 +58,13 @@ img {
 /* Navbar */
 .navbar {
   width: 100%;
-  padding: 16px 40px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
-  /* Membuat navbar tetap di atas saat scroll */
   top: 0;
   z-index: 1000;
   /* Agar navbar di atas elemen lain */
@@ -83,6 +81,21 @@ img {
   height: 40px;
 }
 
+.hamburger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: block;
+  /* Pastikan tombol terlihat */
+}
+
+.hamburger-btn img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 .site-title {
   font-size: 18px;
   color: #111;
@@ -91,30 +104,55 @@ img {
 }
 
 .menu {
-  display: flex;
-  list-style: none;
-  gap: 24px;
+    /* Sembunyikan menu secara default */
+      display: none;
+      flex-direction: column;
+      /* Menu akan tampil vertikal */
+      width: 100%;
+      /* Lebar menu penuh layar */
+      background-color: #444;
+      /* Warna latar belakang menu saat terbuka */
+      position: absolute;
+      /* Posisi menu relatif terhadap .navbar */
+      top: 100%;
+      /* Letakkan menu di bawah navbar */
+      left: 0;
+      padding: 10px 0;
+      /* Padding atas bawah untuk item menu */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      /* Pastikan menu di atas konten lain */
 }
 
-.menu li a {
-  color: #111;
-  font-weight: 500;
-  font-family: "Inter", sans-serif;
-  transition: color 0.3s ease;
-  padding: 8px 0;
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  /* Teks menu di tengah */
+}
+
+.menu li {
+  margin: 10px 0;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
 }
 
 .menu li a:hover,
 .menu li a.active {
   /* Kelas .active bisa ditambahkan via JS untuk menu aktif */
-  color: #34C759;
-  border-bottom: 2px solid #34C759;
+  color: #107844;
+  border-bottom: 2px solid #107844;
   /* Indikator hover/aktif */
 }
 
 /* Tombol Umum */
 .button {
-  background-color: #34C759;
+  background-color: #107844;
   font-family: "Inter", sans-serif;
   color: #ffffff;
   display: inline-flex;
@@ -130,12 +168,11 @@ img {
   gap: 8px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   border: none;
-  /* Hilangkan border default jika ada dari <a> */
   text-align: center;
 }
 
 .button:hover {
-  background-color: #1D724E;
+  background-color: #125439;
   transform: translateY(-2px);
   /* Efek naik sedikit */
 }
@@ -148,7 +185,7 @@ img {
 .hero-section {
   background: url(assets/hero.jpg) no-repeat center center/cover;
   min-height: 90vh;
-  padding: 0 40px;
+  padding: 0 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,7 +215,7 @@ img {
 }
 
 .hero-caption span p {
-  color: #1D724E;
+  color: #107844;
 }
 
 .section-title {
@@ -460,7 +497,7 @@ img {
   text-align: left;
   padding: 64px 64px;
   font-size: 14px;
-  gap: 64px;
+  gap: 24px;
 
 }
 
@@ -471,7 +508,7 @@ img {
 
 .footer-content-container{
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   gap: 200px;
 }
 
@@ -494,11 +531,13 @@ img {
 .menu-papringan{
   max-width: 350px;
 }
+
 .content-menu {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 8px;
+  width: 150px;
 }
 
 .content-menu a{
@@ -524,7 +563,6 @@ img {
 }
 
 .fi:hover {
-  font-size: 24px;
   color: #ddd;
 }
 
@@ -598,8 +636,12 @@ img {
     max-width: 100%;
   }
 
+  .section-footer{
+    gap: 32px;
+  }
   .footer-content-container {
     flex-direction: column;
+    gap:32px;
   }
 
 }
